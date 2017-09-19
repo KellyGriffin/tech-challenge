@@ -5,9 +5,9 @@ provider "aws" {
 }
 
 module "consul" {
-  source = "github.com/hashicorp/consul/terraform/aws"
-  key_name = "awspersonal"
-  key_path = "/Users/chris.matteson/Downloads/awspersonal.pem"
+  source = "github.com/chrismatteson/consul/terraform/aws"
+  key_name = "${var.key_name}"
+  private_key = "${var.private_key}"
   region   = "us-west-2"
   servers  = "3"
 }
