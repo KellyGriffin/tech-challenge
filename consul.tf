@@ -5,7 +5,7 @@ provider "aws" {
 }
 
 module "consul" {
-  source = "github.com/chrismatteson/consul/terraform/aws"
+  source = "github.com/chrismatteson/consul/terraform/aws?ref=terraform_enterprise"
   key_name = "${var.key_name}"
   private_key = "${var.private_key}"
   region   = "us-west-2"
