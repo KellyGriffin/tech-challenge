@@ -36,8 +36,8 @@ job "terraformweb" {
         }
       }
       service {
-        name = "global-website-check"
-        tags = ["global", "cache"]
+        name = "terraform-website-check"
+        tags = ["terraform", "middleman"]
         port = "http"
         check {
           name     = "alive"
