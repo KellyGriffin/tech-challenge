@@ -17,4 +17,8 @@ module "nomad" {
   key_name = "${var.key_name}"
   ami = "${var.ami}"
   server_count = 3
+  instance_type = "t2.micro"
+  client_count = 3
+  cluster_tag_value = "hashicorp"
+  region = "${var.region}"
 }
