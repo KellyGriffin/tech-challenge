@@ -75,3 +75,12 @@ The Consul UI can be accessed at http://PUBLIC_IP:8500/ui.
 
 CONFIGURATION
 }
+
+provider "nomad" {
+  address = {$module.hashistack.primary_server_public_ips.1}
+  region  = "us-west-2"
+}
+
+resource "nomad_job" "terraform_website" {
+  jobspec = "${file("${path.module}/terraform.nomad")}"
+}
