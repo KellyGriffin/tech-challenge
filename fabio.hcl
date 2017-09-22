@@ -25,10 +25,11 @@ job "fabio" {
         }
         args = [
           "$CONSUL_HTTP_ADDR=${module.hashistack.primary_server_private_ips}"
+        ]
       }
       resources {
-        cpu    = 1000
-        memory = 512
+        cpu    = 500
+        memory = 256
         network {
           mbits = 10
           mbits = 10
