@@ -13,3 +13,12 @@ variable "amis" {
 variable "key_name" {}
 variable "private_key" {}
 variable "ami" {}
+variable "instance_type" {
+  default = "t2.micro"
+}
+variable "client_count" {
+  default = 3
+}
+variable "cluster_tag_value" {
+  default = "hashicorp"
+}
