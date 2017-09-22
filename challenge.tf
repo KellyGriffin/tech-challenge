@@ -80,8 +80,8 @@ provider "nomad" {
   address = "${module.hashistack.primary_server_public_ips[1]}"
 }
 
-resource "nomad_job" "terraform_website" {
-  jobspec = "${file("${path.module}/terraform.nomad")}"
+resource "nomad_job" "terraformweb" {
+  jobspec = "${file("${path.module}/terraformweb.hcl")}"
 }
 
 provider "consul" {

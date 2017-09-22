@@ -1,4 +1,4 @@
-job "terraform" {
+job "terraformweb" {
   datacenters = ["dc1"]
   type = "service"
   update {
