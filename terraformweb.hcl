@@ -2,10 +2,10 @@ job "terraformweb" {
   datacenters = ["dc1"]
   type = "service"
   update {
-    max_parallel = 5
+    max_parallel = 2
   }
   group "cache" {
-    count = 1
+    count = 5
     restart {
       attempts = 10
       interval = "5m"
