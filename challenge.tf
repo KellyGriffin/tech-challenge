@@ -87,7 +87,6 @@ resource "nomad_job" "terraform_website" {
 
 provider "consul" {
   address = "${module.hashistack.primary_server_public_ips[1]}"
-  region  = "us-west-2"
 }
 
 resource "consul_service" "terraform_website" {
