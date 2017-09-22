@@ -85,6 +85,11 @@ resource "nomad_job" "terraformweb" {
   depends_on = ["module.hashistack"]
 }
 
+resource "nomad_job" "fabio" {
+  jobspec = "${file("${path.module}/fabio.hcl")}"
+  depends_on = ["module.hashistack"]
+}
+
 provider "consul" {
   address = "${module.hashistack.primary_server_public_ips[1]}:8500"
 }
