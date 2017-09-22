@@ -77,8 +77,7 @@ CONFIGURATION
 }
 
 provider "nomad" {
-  address = "${module.hashistack.primary_server_public_ips[1]}:4646"
-  region  = "us-west-2"
+  address = "${module.hashistack.primary_server_public_ips[1]}"
 }
 
 resource "nomad_job" "terraform_website" {
