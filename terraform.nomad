@@ -2,7 +2,7 @@ job "terraform" {
   datacenters = ["dc1"]
   type = "service"
   update {
-    max_parallel = 1
+    max_parallel = 5
     min_healthy_time = "10s"
     healthy_deadline = "3m"
     auto_revert = false
