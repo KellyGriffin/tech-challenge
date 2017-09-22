@@ -82,6 +82,7 @@ provider "nomad" {
 
 resource "nomad_job" "terraformweb" {
   jobspec = "${file("${path.module}/terraformweb.hcl")}"
+  depends_on = ["module.hashistack"]
 }
 
 provider "consul" {
@@ -90,4 +91,5 @@ provider "consul" {
 
 resource "consul_service" "terraform_website" {
   name = "terraform_website"
+  depends_on = ["module.hashistack"]
 }
