@@ -77,7 +77,7 @@ CONFIGURATION
 }
 
 provider "nomad" {
-  address = "http://${module.hashistack.primary_server_public_ips[1]}"
+  address = "http://${module.hashistack.primary_server_public_ips[1]}:4646"
 }
 
 resource "nomad_job" "terraformweb" {
