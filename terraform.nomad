@@ -3,10 +3,6 @@ job "terraform" {
   type = "service"
   update {
     max_parallel = 5
-    min_healthy_time = "10s"
-    healthy_deadline = "3m"
-    auto_revert = false
-    canary = 0
   }
   group "cache" {
     count = 1

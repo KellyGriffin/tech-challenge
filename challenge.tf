@@ -84,3 +84,12 @@ provider "nomad" {
 resource "nomad_job" "terraform_website" {
   jobspec = "${file("${path.module}/terraform.nomad")}"
 }
+
+provider "consul" {
+  address = "${module.hashistack.primary_server_public_ips[1]}"
+  region  = "us-west-2"
+}
+
+resource "consul_service" "terraform_website" {
+  name = "terraform_website"
+}
