@@ -17,9 +17,9 @@ job "fabio" {
       size = 300
     }
     task "loadbalancer" {
-      driver = "magiconair/fabio"
+      driver = "docker"
       config {
-        image = "fabiolb/fabio"
+        image = "magiconair/fabio"
         port_map = {
           http = 80
         }
