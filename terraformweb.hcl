@@ -3,6 +3,7 @@ job "terraformweb" {
   type = "service"
   update {
     max_parallel = 2
+    stagger = "30s"
   }
   group "cache" {
     count = 5
