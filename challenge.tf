@@ -77,7 +77,7 @@ CONFIGURATION
 }
 
 provider "nomad" {
-  address = "${var.module.hashistack.primary_server_public_ips[1]}"
+  address = "${module.hashistack.primary_server_public_ips[1]}"
   region  = "us-west-2"
 }
 
