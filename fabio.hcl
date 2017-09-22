@@ -18,14 +18,14 @@ job "fabio" {
     }
     task "loadbalancer" {
       driver = "docker"
+      env {
+        CONSUL_HTTP_ADDR = "${module.hashistack.primary_server_private_ips}"
+      }
       config {
         image = "magiconair/fabio"
         port_map = {
           http = 80
         }
-        args = [
-          "$CONSUL_HTTP_ADDR=${module.hashistack.primary_server_private_ips}"
-        ]
       }
       resources {
         cpu    = 500
