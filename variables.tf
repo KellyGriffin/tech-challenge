@@ -10,6 +10,4 @@ variable "amis" {
     "us-west-2" = "ami-4b32be2b"
   }
 }
-variable "key_name" {}
 variable "private_key" {}
-variable "ami" {}
